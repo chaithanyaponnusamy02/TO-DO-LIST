@@ -16,6 +16,7 @@ const App = () => {
   return (
     <div>
       <h1>To Do List</h1>
+      <h3>Total Tasks: {todolist.length}</h3>
       <div className="input-container">
         <input type="text" placeholder='Add a new Task' value={todo} onChange={(e) => setTodo(e.target.value)} />
         <button className='add-button' onClick={handleAdd}>Add</button>
