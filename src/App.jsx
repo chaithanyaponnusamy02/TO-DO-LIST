@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, { useState } from 'react'
 const App = () => {
   const [todo,setTodo] = useState("");
   const [todolist,setTodoList] = useState([]);
@@ -9,6 +8,11 @@ const App = () => {
     setTodoList([...todolist, { id: Date.now(), text: todo, completed: false }]);
     setTodo("");
   };
+
+  const handleComplete = (id) => {
+    setTodoList(todolist.map((item) => item.id === id ? { ...item, completed: !item.completed } : item));
+  };
+
   return (
     <div>
       <h1>To Do List</h1>
@@ -18,7 +22,9 @@ const App = () => {
       </div>
       <ul className='todo-list'>
         {todolist.map((item) => (
-          <li key={item.id}>{item.text}</li>
+          <li key={item.id} onClick={() => handleComplete(item.id)}
+          style={{ cursor: "pointer", textDecoration: item.completed ? "line-through" : "none", color: item.completed ? "gray" : "black" }}
+          >{item.text}</li>
         ))}
       </ul>
     </div>
