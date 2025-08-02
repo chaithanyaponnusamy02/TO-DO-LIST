@@ -13,6 +13,10 @@ const App = () => {
     setTodoList(todolist.map((item) => item.id === id ? { ...item, completed: !item.completed } : item));
   };
 
+  const handleDelete = (id) => {
+    setTodoList(todolist.filter((item) => item.id !== id));
+  };
+
   return (
     <div>
       <h1>To Do List</h1>
@@ -25,7 +29,10 @@ const App = () => {
         {todolist.map((item) => (
           <li key={item.id} onClick={() => handleComplete(item.id)}
           style={{ cursor: "pointer", textDecoration: item.completed ? "line-through" : "none", color: item.completed ? "gray" : "black" }}
-          >{item.text}</li>
+          > 
+          <span>{item.text}</span>
+          <button className='delete-button' onClick={(e) => {e.stopPropagation(); handleDelete(item.id);}}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
