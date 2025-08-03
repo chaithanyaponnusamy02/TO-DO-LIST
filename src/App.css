@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,35 +6,135 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     min-height: 100vh;
     color: #333;
 }
-.app-container{
-    background-color: bisque;
-    padding: 20px;
+
+.app-container {
+    background-color: #fff;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
     width: 100%;
     max-width: 400px;
     text-align: center;
 }
-h1{
+
+h1 {
     color: #333;
     margin-bottom: 10px;
     margin-top: 0;
     font-size: 2em;
 }
-h3{
+
+h3 {
+    margin-top: 20px;
     color: #1b0f0f;
     margin-bottom: 20px;
 }
-.input-container{
+
+.input-container {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-.input-container input{
-    
+
+/* Fixed the selector - removed spaces */
+.input-container input[type="text"] {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-container input[type="text"]:focus {
+    border-color: #007bff;
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: #049eff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #065bb6;
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    background-color: #f9fafc;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px; /* Increased gap between items */
+    word-break: break-word;
+}
+
+.todo-list li:hover {
+    background-color: #ebebeb;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.todo-list li span {
+    flex-grow: 1;
+}
+
+.delete-button {
+    padding: 7px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff0000;
+}
+
+.todo-list li.completed .delete-button {
+    background-color: #666;
+}
+
+.todo-list li.completed .delete-button:hover {
+    background-color: #333;
+}
+
+.todo-list:empty::after{
+    content: "No tasks yet Added";
+    display: block;
+    text-align: center;
+    color: #666;
+    padding: 15px;
+    font-style: italic;
+    font-size: 0.9em;
+    border-top: 1px solid #ccc;
 }
