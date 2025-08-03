@@ -18,7 +18,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className='app-container'>
       <h1>To Do List</h1>
       <h3>Total Tasks: {todolist.length}</h3>
       <div className="input-container">
