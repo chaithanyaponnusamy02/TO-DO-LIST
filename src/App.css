@@ -1,5 +1,5 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #f7f7f7;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -7,11 +7,11 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: #333;
+    color: #222222;
 }
 
 .app-container {
-    background-color: #fff;
+    background-color: #d0cece;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
