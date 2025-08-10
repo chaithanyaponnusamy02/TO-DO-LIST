@@ -74,6 +74,8 @@ h3 {
     padding: 0;
     margin: 0;
     text-align: left;
+    text-decoration: dashed;
+    
 }
 
 .todo-list li {
